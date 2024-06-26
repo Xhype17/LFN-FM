@@ -1,8 +1,10 @@
-*{
+/* Reset default browser styles */
+* {
     padding: 0;
     margin: 0;
 }
 
+/* Gaya umum untuk seluruh halaman */
 body {
     background-color: #181818;
     color: white;
@@ -14,6 +16,7 @@ body {
     margin: 0;
 }
 
+/* Gaya untuk pemutar musik */
 .player {
     background-color: #282828;
     border-radius: 15px;
@@ -123,4 +126,111 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
+}
+
+/* Media queries untuk responsif */
+
+/* Untuk layar lebar lebih dari 1200px */
+@media (min-width: 1200px) {
+    .player {
+        width: 800px;
+    }
+    .album-cover {
+        width: 100px;
+        height: 100px;
+    }
+    .btn img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Untuk tablet dengan lebar layar antara 768px dan 1200px */
+@media (max-width: 1200px) and (min-width: 768px) {
+    .player {
+        width: 80%;
+    }
+    .album-cover {
+        width: 70px;
+        height: 70px;
+    }
+    .btn img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* Untuk ponsel dengan lebar layar antara 480px dan 768px */
+@media (max-width: 768px) and (min-width: 480px) {
+    .player {
+        width: 90%;
+        padding: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .player-left, .player-center, .player-right {
+        padding-left: 0;
+    }
+    .player-left, .player-right {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    .player-center {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .album-cover {
+        width: 60px;
+        height: 60px;
+    }
+    .btn img {
+        width: 20px;
+        height: 20px;
+    }
+    .progress-container {
+        padding: 0 10px;
+    }
+    #volume {
+        width: 60px;
+    }
+}
+
+/* Untuk ponsel dengan lebar layar kurang dari 480px */
+@media (max-width: 480px) {
+    .player {
+        width: 95%;
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .player-left, .player-right {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    .album-cover {
+        width: 50px;
+        height: 50px;
+    }
+    .song-info {
+        margin-left: 5px;
+    }
+    .song-title {
+        font-size: 14px;
+    }
+    .song-artist {
+        font-size: 12px;
+    }
+    .btn img {
+        width: 18px;
+        height: 18px;
+    }
+    .progress-container {
+        padding: 0 10px;
+    }
+    #volume {
+        width: 50px;
+    }
 }
